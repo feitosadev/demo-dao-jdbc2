@@ -37,10 +37,14 @@ public class Program {
 			System.out.println(obj);
 		}
 		
-		System.out.println("\nTeste 4");
-		
+		System.out.println("\nTeste 4");		
 		Seller newSeller = new Seller(27, "Jose", "jose@gmail.com", new Date(), 2900.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = "+ newSeller.getId());
+		
+		System.out.println("\nTeste 5");
+		seller = sellerDao.findById(1);
+		seller.setName("Martha Waine");
+		sellerDao.update(seller);
 	}
 }
